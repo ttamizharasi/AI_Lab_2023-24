@@ -1,8 +1,11 @@
-# Ex.No: 4   Implementation of Alpha Beta Pruning 
+# Ex.No: 4   Implementation of Alpha Beta Pruning
+
 ### DATE:                                                                            
-### REGISTER NUMBER : 
+### REGISTER NUMBER : 212222040170
+
 ### AIM: 
 Write a Alpha beta pruning algorithm to find the optimal value of MAX Player from the given graph.
+
 ### Steps:
 1. Start the program
 2. Initially  assign MAX and MIN value as 1000 and -1000.
@@ -15,20 +18,49 @@ Write a Alpha beta pruning algorithm to find the optimal value of MAX Player fro
 9.  Stop the program. 
 
 ### Program:
-
-
-
-
-
-
-
-
-
-
+```
+# Initial values of Alpha and Beta
+MAX, MIN = 1000, -1000
+# Returns optimal value for current player
+#(Initially called for root and maximizer)
+def minimax(depth, nodeIndex, maximizingPlayer,
+            values, alpha, beta):
+    # Terminating condition. i.e
+    # leaf node is reached
+    if depth == 3:
+        return values[nodeIndex]
+    if maximizingPlayer:
+        best = MIN
+        # Recur for left and right children
+        for i in range(0, 2): 
+            val = minimax(depth + 1, nodeIndex * 2 + i,
+                          False, values, alpha, beta)
+            best = max(best, val)
+            alpha = max(alpha, best)
+            # Alpha Beta Pruning
+            if beta <= alpha:
+                break
+        return best
+    else:
+        best = MAX
+        # Recur for left and
+        # right children
+        for i in range(0, 2):
+            val = minimax(depth + 1, nodeIndex * 2 + i,
+                            True, values, alpha, beta)
+            best = min(best, val)
+            beta = min(beta, best)
+            # Alpha Beta Pruning
+            if beta <= alpha:
+                break
+        return best
+values = [3, 5, 6, 9, 1, 2, 0, -1] 
+print("The optimal value is :", minimax(0, 0, True, values, MIN, MAX))
+```
 
 ### Output:
 
-
+![image](https://github.com/user-attachments/assets/75fb3cf1-b84d-4515-b6a3-7ad6fa3813c9)
 
 ### Result:
 Thus the best score of max player was found using Alpha Beta Pruning.
