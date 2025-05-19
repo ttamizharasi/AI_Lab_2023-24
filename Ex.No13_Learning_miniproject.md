@@ -1,5 +1,5 @@
 # Ex.No: 13 Learning – Use Supervised Learning  
-### DATE:                                                                            
+### DATE: 13/05/2025                                                                           
 ### REGISTER NUMBER : 212222040170
 ### AIM: 
 To write a program to train the classifier for Differentiated Thyroid Cancer Recurrence.
