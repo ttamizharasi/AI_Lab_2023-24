@@ -1,4 +1,4 @@
-# Ex.No: 6   Logic Programming – Factorial of number   
+# Ex.No: 6   Logic Programming – Towers of Hanoi   
 ### DATE: 25/03/2025                                                                           
 ### REGISTER NUMBER : 212222040170
 ### AIM: 
